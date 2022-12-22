@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import albumReducer from './navigation';
+import productReducer from './navigation';
 
 const store = configureStore({
-    reducer: { counter: albumReducer},
+    reducer: { counter: productReducer},
 });
 
 
