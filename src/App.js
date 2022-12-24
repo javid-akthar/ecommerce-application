@@ -1,10 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './components/Home'
+import "./App.css";
+import Home from "./components/Home";
+import { Route } from "react-router-dom";
+import CardDetails from "./components/CardDetails";
 
 function App() {
+  
   return (
-    <Home/>
+    <>
+      
+      <Route  path='/home' component={Home} /> 
+      <Route  path="/card-details">
+        <CardDetails />
+      </Route>
+    </>
   );
 }
 
