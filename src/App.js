@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./components/Home";
 import { Route } from "react-router-dom";
 import CardDetails from "./components/CardDetails";
