@@ -5,40 +5,21 @@ import { productActions } from "../store/navigation";
 import AddToCart from "./AddToCart";
 import DeleteFromList from './DeleteFromList';
 import EditProduct from './EditProduct';
-// import fs from 'fs'
-// import preval from 'babel-plugin-preval';
 
 function ProductList(props) {
   const dispatch = useDispatch();
+  // importing productList from store
   const productList = useSelector((state) => state.counter.productList);
-  // let dbResponse = "";
+
+  // in the useEffect we are triggering the get api to get the products details from db
   useEffect(() => {
     fetch("http://localhost:3000/products")
       .then(async (response) => {
         response = await response.json();
-        console.log("responseof", response);
-        console.log("productActions", productActions);
+        console.log("response", response);
         dispatch(productActions.updateProductList(response));
-        // console.log(response.json());
       })
       .then((json) => console.log(json));
-    // const fs = require("fs");
-    // const fileName = "./db.json";
-    // const file = require(fileName);
-
-    // file.key = "new value";
-
-    // fs.writeFile(fileName, JSON.stringify(file), function writeJSON(err) {
-    //   if (err) return console.log(err);
-    //   console.log(JSON.stringify(file));
-    //   console.log("writing to " + fileName);
-    // });
-
-//     const greetingContent = preval`
-//     const fs = require('fs')
-//     module.exports = fs.readFileSync(require.resolve('./greeting.txt'), 'utf8')
-//   `
-//   console.log(greetingContent);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -55,6 +36,7 @@ function ProductList(props) {
   let ele = "";
   if (productList != null) {
     console.log("productList", productList);
+    // rendering the productList card with details got from db through store
     ele = productList.map((item, index) => {
       return (
         <div key={"product"+item.id} className="card" style={{ width: "18rem" }}>
@@ -105,6 +87,7 @@ function ProductList(props) {
   };
 
   return (
+    // flex container to hold the productlist cards
     <div className="d-flex flex-wrap" style={flexMainDiv}>
       {ele}
     </div>

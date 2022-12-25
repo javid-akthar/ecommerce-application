@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       
-      <Route  path='/home' component={Home} /> 
+      <Route exact path='/' component={Home} /> 
       <Route  path="/card-details">
         <CardDetails />
       </Route>

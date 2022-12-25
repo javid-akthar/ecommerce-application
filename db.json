@@ -1,5 +1,8 @@
 {
-  "cartList" : [],
+  "cartList": [
+    1,
+    2
+  ],
   "products": [
     {
       "id": 33,
@@ -41,7 +44,7 @@
     },
     {
       "id": 35,
-      "title": "3 DOOR PORTABLE",
+      "title": "3 DOOR PORTABLEj",
       "description": "Material: Stainless Steel and Fabric  Item Size: 110 cm x 45 cm x 175 cm Package Contents: 1 Storage Wardrobe",
       "price": 41,
       "discountPercentage": 7.98,
@@ -56,7 +59,8 @@
         "https://i.dummyjson.com/data/products/35/3.jpg",
         "https://i.dummyjson.com/data/products/35/4.jpg",
         "https://i.dummyjson.com/data/products/35/thumbnail.jpg"
-      ]
+      ],
+      "imageUrl": "https://i.dummyjson.com/data/products/35/thumbnail.jpg"
     },
     {
       "id": 36,
@@ -116,7 +120,7 @@
     },
     {
       "id": 40,
-      "title": "women winter clothes",
+      "title": "women winter clothesjj",
       "description": "women winter clothes thick fleece hoodie top with sweat pantjogger women sweatsuit set joggers pants two piece pants set",
       "price": 57,
       "discountPercentage": 13.39,
@@ -128,7 +132,8 @@
       "images": [
         "https://i.dummyjson.com/data/products/40/1.jpg",
         "https://i.dummyjson.com/data/products/40/2.jpg"
-      ]
+      ],
+      "imageUrl": "https://i.dummyjson.com/data/products/40/thumbnail.jpg"
     },
     {
       "id": 41,
@@ -1360,6 +1365,26 @@
       "category": "",
       "imageUrl": "",
       "id": 112
+    },
+    {
+      "title": "1",
+      "description": "",
+      "price": "",
+      "rating": "",
+      "brand": "",
+      "category": "",
+      "imageUrl": "",
+      "id": 113
+    },
+    {
+      "title": "ll",
+      "description": "",
+      "price": "",
+      "rating": "",
+      "brand": "",
+      "category": "",
+      "imageUrl": "",
+      "id": 114
     }
   ]
 }

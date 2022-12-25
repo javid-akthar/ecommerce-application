@@ -1,45 +1,55 @@
-import React from 'react';
+import React from "react";
 import { productActions } from "../store/navigation";
-import {  useSelector, useDispatch } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import toastr from "toastr";
 
 function DeleteFromList(props) {
-    const dispatch = useDispatch();
-    const cartItemsCountMap = useSelector((state) => state.counter.cartItemsCountMap);
-    localStorage.setItem("cartItemsCountMap",JSON.stringify(Object.fromEntries(cartItemsCountMap)));
-    // console.log('indelete',props.unqiueId);
-    // console.log('indelete',props);
-    function deleteFromList(uniqueId){
-        // console.log('insidemethod',uniqueId);
+  const dispatch = useDispatch();
+  // importing cartItemsCountMap from store
+  const cartItemsCountMap = useSelector(
+    (state) => state.counter.cartItemsCountMap
+  );
+  // setting up the local cartItemsCountMap in localstorage
+  localStorage.setItem(
+    "cartItemsCountMap",
+    JSON.stringify(Object.fromEntries(cartItemsCountMap))
+  );
 
-        var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+  // this function will delete the product added to productList
+  function deleteFromList(uniqueId) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-var raw = "";
+    var raw = "";
 
-var requestOptions = {
-  method: 'DELETE',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
 
-fetch("http://localhost:3000/products/"+uniqueId, requestOptions)
-  .then(response => response.text())
-  .then(result =>
-    { console.log(result)
-        dispatch(productActions.deleteFromList(uniqueId)); 
-    })
-  .catch(error => console.log('error', error));
+    // api call to trigger delete function
+    fetch("http://localhost:3000/products/" + uniqueId, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
+        dispatch(productActions.deleteFromList(uniqueId));
+        toastr.options.timeOut = 1500;
+        toastr.success("product Details updated");
+      })
+      .catch((error) => console.log("error", error));
+  }
 
-        
-    }
-
-    return (
-        <div>
-               <i onClick={() => deleteFromList(props.uniqueId)} className="fa-solid fa-trash"></i> 
-        </div>
-    );
+  // button in which user triggers the delete function
+  return (
+    <div>
+      <i
+        onClick={() => deleteFromList(props.uniqueId)}
+        className="fa-solid fa-trash"
+      ></i>
+    </div>
+  );
 }
 
 export default DeleteFromList;
