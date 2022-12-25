@@ -88,10 +88,17 @@ function CartItems(props) {
     alignItems: "center"
 }
 
+let totalPriceStyle = {
+  position : "sticky",
+  top: "18px",
+  zIndex : "5"
+}
+
+
 // cartlist JSX code
   return (
     <div style={headerDivStyle}>
-    <h3>Total Price: {total}$</h3>
+    <h3 style={totalPriceStyle}>Total Price: {total}$</h3>
       <h3>Cart Items </h3>
       {ele}
     </div>

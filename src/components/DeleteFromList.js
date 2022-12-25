@@ -2,6 +2,7 @@ import React from "react";
 import { productActions } from "../store/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import toastr from "toastr";
+import './toastr.css'
 
 function DeleteFromList(props) {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function DeleteFromList(props) {
         console.log(result);
         dispatch(productActions.deleteFromList(uniqueId));
         toastr.options.timeOut = 1500;
-        toastr.success("product Details updated");
+        toastr.warning("product Deleted");
       })
       .catch((error) => console.log("error", error));
   }

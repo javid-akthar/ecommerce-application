@@ -122,7 +122,7 @@ function AddProduct(props) {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLongTitle">
-                Modal title
+                Add Product
               </h5>
               <button
                 type="button"
