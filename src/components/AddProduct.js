@@ -55,7 +55,7 @@ function AddProduct(props) {
       rating: rating,
       brand: brand,
       category: category,
-      imageUrl: imageUrl,
+      thumbnail: imageUrl,
     };
 
     var myHeaders = new Headers();
