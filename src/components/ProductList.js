@@ -5,6 +5,7 @@ import { productActions } from "../store/navigation";
 import AddToCart from "./AddToCart";
 import DeleteFromList from './DeleteFromList';
 import EditProduct from './EditProduct';
+import MoreDetailsBtn from "./MoreDetailsBtn";
 
 function ProductList(props) {
   const dispatch = useDispatch();
@@ -67,11 +68,13 @@ function ProductList(props) {
                 </tr>
               </tbody>
             </table>
+            
             <div style={funcBtn}> 
              <AddToCart uniqueId={item.id} />
              <EditProduct item={item}/>
              <DeleteFromList uniqueId={item.id} />
             </div>
+            <MoreDetailsBtn id={item.id}/>
           </div>
         </div>
       );

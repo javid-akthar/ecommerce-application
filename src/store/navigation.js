@@ -25,6 +25,8 @@ const initialProductState = {
   productListMap: productListMap,
   cartItemsCountMap,
   cacheDataLoaded: false,
+  // productListCache : [],
+  sorted: false
 };
 // console.log("initialProductState", initialProductState);
 const productSlice = createSlice({
@@ -118,7 +120,10 @@ const productSlice = createSlice({
         );
         state.sortAsc = true;
       }
-    },
+      state.sorted = true
+    },removeSort(state){
+      state.sorted = false
+    }
   },
 });
 

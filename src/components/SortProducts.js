@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { productActions } from "../store/navigation";
 import AddProduct from './AddProduct';
+import RemoveSort from './RemoveSort';
 
 
 function SortProducts(props) {
@@ -23,6 +24,7 @@ function SortProducts(props) {
     // button through which sort function will be triggered
     return (
         <div style={sortBtnDivStyle}>
+            <RemoveSort/>
            <button onClick={sortProducts} type="button" className="btn btn-primary" style={sortBtnStyle}  ><i className="fa-solid fa-sort"></i> sort items by price</button> 
            <AddProduct/>
         </div>

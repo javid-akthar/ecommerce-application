@@ -22,7 +22,6 @@ function Navbar(props) {
             <nav className="navbar navbar-light" style={navBarStyleOBj}>
       <span className="navbar-brand mb-0 h1" style={navbarTitleStle}>Ecommerce Application</span>
       <CartTotal/>
-      {/* <HomeButton/> */}
     </nav>
         </div>
     );
