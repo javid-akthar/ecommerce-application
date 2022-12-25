@@ -31,7 +31,7 @@ function DeleteFromList(props) {
     };
 
     // api call to trigger delete function
-    fetch("http://localhost:3000/products/" + uniqueId, requestOptions)
+    fetch("http://ec2-15-206-165-96.ap-south-1.compute.amazonaws.com:3004/products/" + uniqueId, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result);

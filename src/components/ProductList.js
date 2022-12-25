@@ -13,7 +13,7 @@ function ProductList(props) {
 
   // in the useEffect we are triggering the get api to get the products details from db
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("http://ec2-15-206-165-96.ap-south-1.compute.amazonaws.com:3004/products")
       .then(async (response) => {
         response = await response.json();
         console.log("response", response);

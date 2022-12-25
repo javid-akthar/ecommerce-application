@@ -25,7 +25,7 @@ function CartItems(props) {
   let total = 0;
   // loading the products through get api
   useLayoutEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("http://ec2-15-206-165-96.ap-south-1.compute.amazonaws.com:3004/products")
       .then(async (response) => {
         response = await response.json();
         console.log("response", response);
